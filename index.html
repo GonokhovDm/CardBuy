@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>CardData</title>
+</head>
+
+<body>
+	<main>
+		<div class="container">
+			<div class="paiment">
+				<h2>Payment information</h2>
+				<div class="general">
+					<div class="card">
+						<img src="./source/holo.jpg" alt="">
+						<div class="card__number">
+							<span>#### #### #### ####</span>
+						</div>
+						<div class="card__information">
+							<div class="holder">
+								<span class="holder__title">Card Holder</span>
+								<span class="holder__name">FULL NAME</span>
+							</div>
+							<div class="expires">
+								<span class="expires__title">Expires</span>
+								<span class="expires__date">MM/YY</span>
+							</div>
+						</div>
+					</div>
+					<!-- / .card -->
+
+					<form action="" method="post">
+						<div class="form__element">
+							<span>Card number</span>
+							<input type="text">
+						</div>
+						<div class="form__element">
+							<span>Name on card</span>
+							<input type="text">
+						</div>
+						<div class="form__info">
+							<div class="form__element">
+								<span>Expiration date</span>
+								<div>
+									<input type="text" class="month" placeholder="Month">
+									<input type="text" class="year" placeholder="Year">
+								</div>
+							</div>
+							<div class="form__element">
+								<span>CVV</span>
+								<input type="text" class="cvv">
+							</div>
+						</div>
+						<button>Buy it!</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="./script.js"></script>
+	<script src="https://unpkg.com/vue@next"></script>
+</body>
+
+</html>

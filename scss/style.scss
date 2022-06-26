@@ -1,0 +1,163 @@
+@import "../css/null.css";
+
+body {
+	font-family: 'Rajdhani', sans-serif;
+	font-size: 25px;
+	font-weight: 600;
+	background: #cedef0;
+	color: #fff;
+}
+
+h2 {
+	font-size: 30px;
+	font-weight: 600;
+	color: #242430;
+}
+
+.container {
+	margin: 0 auto;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	width: 70%;
+}
+
+.paiment {
+	width: 100%;
+	background: #fff;
+	margin-top: 50px;
+	padding: 25px;
+	border-radius: 25px;
+	text-align: center;
+}
+
+.general {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+
+.card {
+	width: 40rem;
+	height: 25rem;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 20px;
+	justify-content: space-between;
+	background-image: url(/source/background.jpg);
+	background-size: cover;
+	background-position: center;
+	border-radius: 15px;
+
+	img {
+		width: 20%;
+		border-radius: 5px;
+	}
+}
+
+.card__number {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+	span {
+		font-size: 35px;
+		letter-spacing: 0.1em;
+	}
+}
+
+.card__information {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	.holder {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		.holder__title {
+			font-size: 18px;
+			font-weight: 400;
+			letter-spacing: 0.1em;
+			margin-bottom: 10px;
+		}
+
+		.holder__name {
+			letter-spacing: 0.1em;
+		}
+	}
+
+	.expires {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		.expires__title {
+			font-size: 18px;
+			font-weight: 400;
+			letter-spacing: 0.1em;
+			margin-bottom: 10px;
+		}
+
+		.expires__date {
+			letter-spacing: 0.1em;
+		}
+	}
+}
+
+.form__element {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	margin-top: 20px;
+
+	span {
+		color: #242430;
+		font-size: 18px;
+		font-weight: 400;
+	}
+
+	input {
+		width: 100%;
+		padding: 10px 20px;
+		background: #f2f2f2;
+		font-size: 20px;
+		font-weight: 600;
+		border-radius: 5px;
+		color: #242430;
+		letter-spacing: 0.2em;
+	}
+
+	div {
+		display: flex;
+		flex-direction: row;
+	}
+}
+
+.form__info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.year {
+	margin: 0 20px 0;
+}
+
+form {
+	button {
+		width: 50%;
+		background: #4287f5;
+		color: #fff;
+		font-size: 25px;
+		font-weight: 600;
+		margin-top: 25px;
+		padding: 10px;
+		border-radius: 15px;
+	}
+}
