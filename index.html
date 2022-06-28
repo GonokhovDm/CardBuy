@@ -53,7 +53,7 @@
 							</div>
 							<div class="expires">
 								<span class="expires__title">Expires</span>
-								<span class="expires__date">MM/YY</span>
+								<span class="expires__date">{{ monthDate }}/{{ yearDate }}</span>
 							</div>
 						</div>
 					</div>
@@ -83,9 +83,25 @@
 						<div class="form__info">
 							<div class="form__element">
 								<span>Expiration date</span>
+								<!-- EXPIRATION DATE input -->
 								<div>
-									<input type="text" class="month" placeholder="Month">
-									<input type="text" class="year" placeholder="Year">
+									<!-- MONTH -->
+									<input 
+									type="number" 
+									class="month" 
+									placeholder="Month" 
+									min="1" 
+									max="12"
+									v-on:input="inputChangeMonth"
+									/>
+									<!-- YEAR -->
+									<input 
+									type="number" 
+									class="year" 
+									placeholder="Year" 
+									min="22"
+									v-on:input="inputChangeYear"
+									/>
 								</div>
 							</div>
 							<div class="form__element">
