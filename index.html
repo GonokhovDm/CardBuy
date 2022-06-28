@@ -21,12 +21,35 @@
 					<div class="card">
 						<img src="./source/holo.jpg" alt="">
 						<div class="card__number">
-							<span>{{ cardNumber }}</span>
+							<ul>
+								<li>{{ cardNumber[0] }}</li>
+								<li>{{ cardNumber[1] }}</li>
+								<li>{{ cardNumber[2] }}</li>
+								<li>{{ cardNumber[3] }}</li>
+							</ul>
+							<ul>
+								<li>{{ cardNumber[4] }}</li>
+								<li>{{ cardNumber[5] }}</li>
+								<li>{{ cardNumber[6] }}</li>
+								<li>{{ cardNumber[7] }}</li>
+							</ul>
+							<ul>
+								<li>{{ cardNumber[8] }}</li>
+								<li>{{ cardNumber[9] }}</li>
+								<li>{{ cardNumber[10] }}</li>
+								<li>{{ cardNumber[11] }}</li>
+							</ul>
+							<ul>
+								<li>{{ cardNumber[12] }}</li>
+								<li>{{ cardNumber[13] }}</li>
+								<li>{{ cardNumber[14] }}</li>
+								<li>{{ cardNumber[15] }}</li>
+							</ul>
 						</div>
 						<div class="card__information">
 							<div class="holder">
 								<span class="holder__title">Card Holder</span>
-								<span class="holder__name">FULL NAME</span>
+								<span class="holder__name"> {{ holderName }}</span>
 							</div>
 							<div class="expires">
 								<span class="expires__title">Expires</span>
@@ -40,11 +63,22 @@
 					<form action="" method="post">
 						<div class="form__element">
 							<span>Card number</span>
-							<input type="text" v-on:input="inputChangeHandler">
+							<!-- CARD NUMBER input -->
+							<input required
+							type="text"
+							onkeypress='validateNumber(event)' 
+							maxlength="16"
+							v-on:input="inputChangeNumber"					
+							/>
 						</div>
 						<div class="form__element">
 							<span>Name on card</span>
-							<input type="text">
+							<!-- HOLDER NAME input -->
+							<input required
+							type="text"
+							onkeypress='validateName(event)' 
+							v-on:input="inputChangeName"
+							/>
 						</div>
 						<div class="form__info">
 							<div class="form__element">

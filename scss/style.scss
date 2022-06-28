@@ -58,14 +58,34 @@ h2 {
 }
 
 .card__number {
-	width: 100%;
+	width: 90%;
+	margin: 0 auto;
 	display: flex;
-	justify-content: center;
+	flex-direction: row;
+	justify-content: space-around;
 
-	span {
+	ul {
+		display: flex;
+		flex-direction: row;
+		//margin-right: 15px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	ul li {
 		font-size: 35px;
 		letter-spacing: 0.1em;
+		display: flex;
+		flex-direction: row;
 	}
+
+
+	// span {
+	// 	font-size: 35px;
+	// 	letter-spacing: 0.1em;
+	// }
 }
 
 .card__information {
@@ -88,6 +108,7 @@ h2 {
 
 		.holder__name {
 			letter-spacing: 0.1em;
+			text-transform: uppercase;
 		}
 	}
 
