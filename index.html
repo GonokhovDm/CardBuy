@@ -87,7 +87,7 @@
 								<div>
 									<!-- MONTH -->
 									<input 
-									type="number" 
+									type="text" 
 									class="month" 
 									placeholder="Month" 
 									min="1" 
@@ -96,10 +96,10 @@
 									/>
 									<!-- YEAR -->
 									<input 
-									type="number" 
+									type="text" 
 									class="year" 
-									placeholder="Year" 
-									min="22"
+									placeholder="Year"
+									maxlength="2"
 									v-on:input="inputChangeYear"
 									/>
 								</div>

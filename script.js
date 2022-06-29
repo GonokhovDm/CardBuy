@@ -38,9 +38,11 @@ const App = {
 		inputChangeMonth(event) {
 			// 1 <= input <= 12
 			if ((event.target.value < 1) && (event.target.value != '')) {
+				alert('incorrect value');
 				event.target.value = 1;
 			} else {
 				if (event.target.value > 12) {
+					alert('incorrect value');
 					event.target.value = 12;
 				}
 			}
@@ -59,12 +61,38 @@ const App = {
 		},
 
 		// Change display YEAR
-		// Only numbers more then 22
+		// Only numbers greater then 22
+		// Only numbers less then 32
 		inputChangeYear(event) {
 			let yearNow = new Date();			
 			let shortYearNow = yearNow.getFullYear().toString();
+			
 			// get 2 last numbers of year
 			shortYearNow = shortYearNow[2] + shortYearNow[3];
+
+			// check enter value and return right value -
+			// - at input & field on card
+			if (event.target.value == '') { 
+				this.yearDate = 'YY'
+			} else {
+				if ((event.target.value < 10) && (event.target.value > 0)) {
+					this.yearDate = '0' + event.target.value
+				} else {
+					if (event.target.value < shortYearNow) {
+						alert("This field can't be less then current year");
+						this.yearDate = shortYearNow;
+						event.target.value = shortYearNow;
+					} else {
+						if (event.target.value > parseInt(shortYearNow)+10) {
+							this.yearDate = parseInt(shortYearNow)+10;
+							event.target.value = parseInt(shortYearNow)+10;
+							alert(`This field can't be greater then ${parseInt(shortYearNow)+10}`);
+						} else {
+							this.yearDate = event.target.value					
+						}
+					}
+				}
+			}	
 		}
 	}
 }
