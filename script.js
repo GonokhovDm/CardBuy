@@ -47,7 +47,7 @@ const App = {
 
 			// add '0' after the once number
 			// fill card place 'MM' if input is clear
-			if (event.target.value < 10) {
+			if ((event.target.value < 10) && (event.target.value > 0)) {
 				this.monthDate = '0' + event.target.value
 			} else {
 				if (event.target.value == '') {
