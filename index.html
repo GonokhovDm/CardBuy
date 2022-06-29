@@ -18,6 +18,7 @@
 			<div class="paiment" id="appPayment">
 				<h2>Payment information</h2>
 				<div class="general">
+					<!-- card face -->
 					<div class="card">
 						<img src="./source/holo.jpg" alt="">
 						<div class="card__number">
@@ -58,6 +59,19 @@
 						</div>
 					</div>
 					<!-- / .card -->
+
+					<!-- card turnover -->
+					<div class="card _turnover ._active">
+						<div class="magnetic-line"></div>
+						<div class="cvv-info">
+							<span class="cvv-title">CVV</span>
+							<ul>
+								<li>{{ cvv[0] }}</li>
+								<li>{{ cvv[1] }}</li>
+								<li>{{ cvv[2] }}</li>
+							</ul>
+						</div>
+					</div>
 
 					<!-- FORM -->
 					<form action="" method="post">

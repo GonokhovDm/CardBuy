@@ -5,7 +5,8 @@ const App = {
 			cardNumber: ['#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'],
 			holderName: 'FULL NAME',
 			monthDate: 'MM',
-			yearDate: 'YY'
+			yearDate: 'YY',
+			cvv: ['#','#','#']
 		}
 	},
 	methods: {
@@ -125,3 +126,5 @@ function validateName(evt) {
 	  if(theEvent.preventDefault) theEvent.preventDefault();
 	}
  }
+
+ // Switch class .active on focus CVV
