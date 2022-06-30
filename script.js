@@ -125,6 +125,42 @@ function validateName(evt) {
 	  theEvent.returnValue = false;
 	  if(theEvent.preventDefault) theEvent.preventDefault();
 	}
- }
+}
 
- // Switch class .active on focus CVV
+// Switch class .active on focus CVV
+
+// var cards = document.querySelectorAll('.card');
+
+// [...cards].forEach((card)=>{	
+// 	card.addEventListener( 'click', function() {	  
+// 		card.classList.toggle('is-flipped');	
+// 	});
+// });
+
+// var wrapper = document.querySelectorAll('cvv');
+// wrapper.addEventListener( 'focus', function() {
+// 	[...cards].forEach((card)=> {
+// 		card.classList.toggle('is-flipped');
+// 		console.log('wut');
+// 	});
+// });
+
+function wrapperHandler() {
+	var cards = document.querySelectorAll('.card');
+	var wrapper = document.querySelectorAll('cvv');
+	if (wrapper != 0) {
+		[...cards].forEach((card)=> {
+			card.classList.add('is-flipped');
+		});
+	}
+}
+
+function reverseWrapperHandler() {
+	var cards = document.querySelectorAll('.card');
+	var wrapper = document.querySelectorAll('cvv');
+	if (wrapper != 1) {
+		[...cards].forEach((card)=> {
+			card.classList.remove('is-flipped');
+		});
+	}
+}

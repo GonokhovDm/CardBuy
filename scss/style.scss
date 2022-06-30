@@ -39,25 +39,45 @@ h2 {
 	text-align: center;
 }
 
-.general {
-	display: flex;
+.scene {
+	display: inline-block;
+	//display: flex;
 	flex-direction: column;
-	margin: 0 auto;
-	margin-top: 25px;
+	perspective: 350px;
 }
 
 .card {
-	width: 40rem;
-	height: 25rem;
+	width: 45vw;
+	height: 30vw;
+	position: relative;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	margin: 0 auto;
+	transform-style: preserve-3d;
+	transform-origin: center right;
+	transition: transform 1s;
+}
+
+.card.is-flipped {
+	transform: translateX(-100%) rotateY(-180deg);
+ }
+
+.card__face{
+	width: 40vw;
+	height: 25vw;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
 	padding: 20px;
 	justify-content: space-between;
 	background-image: url(/source/background.jpg);
 	background-size: cover;
 	background-position: center;
 	border-radius: 15px;
+	backface-visibility: hidden;
+	
 
 	img {
 		width: 20%;
@@ -135,10 +155,11 @@ h2 {
 // ***********************************************
 // CARD TURNOVER
 // ***********************************************
-.card._turnover {
+.card__face--back {
 	justify-content: start;
 	align-items: start;
 	padding: 40px 0;
+	transform: rotateY(180deg);
 }
 
 .magnetic-line {
