@@ -1,0 +1,29 @@
+@media (max-width: 920px) {
+	.card__face {
+		border-radius: 10px;
+
+		img {
+			border-radius: 3px;
+		}
+	}
+}
+
+@media (max-width: 640px) {
+	.card__face {
+		border-radius: 7px;
+
+		img {
+			border-radius: 2px;
+		}
+	}
+}
+
+@media (max-width: 380px) {
+	.card__face {
+		border-radius: 5px;
+
+		img {
+			border-radius: 1px;
+		}
+	}
+}

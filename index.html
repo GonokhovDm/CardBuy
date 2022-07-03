@@ -9,6 +9,8 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/meta.css">
+	<link rel="stylesheet" href="./css/null.css">
 	<title>CardData</title>
 </head>
 
@@ -17,7 +19,7 @@
 		<div class="container">
 			<div class="paiment" id="appPayment">
 				<h2>Payment information</h2>
-				<div class="scene scene--card">					
+				<div class="scene scene--card">
 					<div class="card">
 						<!-- card face -->
 						<div class="card__face card__face--front">
@@ -74,28 +76,20 @@
 							</div>
 						</div>
 						<!-- / .card back -->
-					</div>					
+					</div>
 
 					<!-- FORM -->
 					<form action="" method="post">
 						<div class="form__element">
 							<span>Card number</span>
 							<!-- CARD NUMBER input -->
-							<input required
-							type="text"
-							onkeypress='validateNumber(event)' 
-							maxlength="16"
-							v-on:input="inputChangeNumber"					
-							/>
+							<input required type="text" onkeypress='validateNumber(event)' maxlength="16"
+								v-on:input="inputChangeNumber" />
 						</div>
 						<div class="form__element">
 							<span>Name on card</span>
 							<!-- HOLDER NAME input -->
-							<input required
-							type="text"
-							onkeypress='validateName(event)' 
-							v-on:input="inputChangeName"
-							/>
+							<input required type="text" onkeypress='validateName(event)' v-on:input="inputChangeName" />
 						</div>
 						<div class="form__info">
 							<div class="form__element">
@@ -103,32 +97,17 @@
 								<!-- EXPIRATION DATE input -->
 								<div>
 									<!-- MONTH -->
-									<input 
-									type="text" 
-									class="month" 
-									placeholder="Month" 
-									min="1" 
-									max="12"
-									v-on:input="inputChangeMonth"
-									/>
+									<input type="text" class="month" placeholder="Month" min="1" max="12"
+										v-on:input="inputChangeMonth" />
 									<!-- YEAR -->
-									<input 
-									type="text" 
-									class="year" 
-									placeholder="Year"
-									maxlength="2"
-									v-on:input="inputChangeYear"
-									/>
+									<input type="text" class="year" placeholder="Year" maxlength="2"
+										v-on:input="inputChangeYear" />
 								</div>
 							</div>
 							<div class="form__element">
 								<span>CVV</span>
-								<input 
-								type="text" 
-								class="cvv" 
-								onfocus="wrapperHandler(event)"
-								onblur="reverseWrapperHandler(event)"
-								/>
+								<input type="text" class="cvv" onfocus="wrapperHandler(event)"
+									onblur="reverseWrapperHandler(event)" />
 							</div>
 						</div>
 						<button>Buy it!</button>
