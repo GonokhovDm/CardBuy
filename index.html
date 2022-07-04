@@ -83,13 +83,13 @@
 						<div class="form__element">
 							<span>Card number</span>
 							<!-- CARD NUMBER input -->
-							<input required type="text" onkeypress='validateNumber(event)' maxlength="16"
+							<input type="text" onkeypress='validateNumber(event)' maxlength="16"
 								v-on:input="inputChangeNumber" />
 						</div>
 						<div class="form__element">
 							<span>Name on card</span>
 							<!-- HOLDER NAME input -->
-							<input required type="text" onkeypress='validateName(event)' v-on:input="inputChangeName" />
+							<input type="text" onkeypress='validateName(event)' v-on:input="inputChangeName" />
 						</div>
 						<div class="form__info">
 							<div class="form__element">
@@ -106,8 +106,9 @@
 							</div>
 							<div class="form__element">
 								<span>CVV</span>
-								<input type="text" class="cvv" onfocus="wrapperHandler(event)"
-									onblur="reverseWrapperHandler(event)" />
+								<input type="text" class="cvv" onkeypress='validateNumber(event)'
+									onfocus="wrapperHandler(event)" onblur="reverseWrapperHandler(event)" maxlength="3"
+									v-on:input="inputChangeCVV" />
 							</div>
 						</div>
 						<button>Buy it!</button>

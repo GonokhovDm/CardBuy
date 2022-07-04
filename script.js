@@ -1,12 +1,11 @@
-const App = {
+const Card = {
 	data() {
 		return {
-			title: 'Test',
-			cardNumber: ['#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'],
+			cardNumber: ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
 			holderName: 'FULL NAME',
 			monthDate: 'MM',
 			yearDate: 'YY',
-			cvv: ['#','#','#']
+			cvv: ['#', '#', '#']
 		}
 	},
 	methods: {
@@ -14,15 +13,15 @@ const App = {
 		// Not more then 16 chars
 		// Only numbers - function validateNumber(evt) {}
 		inputChangeNumber(event) {
-			cardNumber = event.target.value.split('');	
-			let changeCardNumber = [];			
-			for (let i = 0; cardNumber.length <= 16; i++) {		
+			cardNumber = event.target.value.split('');
+			let changeCardNumber = [];
+			for (let i = 0; cardNumber.length <= 16; i++) {
 				changeCardNumber = cardNumber.splice([i], 1, cardNumber[i]);
 				if (cardNumber[i] == undefined) {
 					cardNumber[i] = '#'
 				}
 				this.cardNumber = cardNumber;
-			}	
+			}
 		},
 
 		// Change display HOLDER NAME
@@ -31,7 +30,7 @@ const App = {
 			event.target.value = event.target.value.toUpperCase();
 			if (event.target.value == '') {
 				this.holderName = 'FULL NAME'
-			} else { this.holderName = event.target.value }			
+			} else { this.holderName = event.target.value }
 		},
 
 		// Change display MONTH
@@ -56,24 +55,24 @@ const App = {
 				if (event.target.value == '') {
 					this.monthDate = 'MM'
 				} else {
-					this.monthDate = event.target.value		
+					this.monthDate = event.target.value
 				}
-			}			
+			}
 		},
 
 		// Change display YEAR
 		// Only numbers greater then 22
 		// Only numbers less then 32
 		inputChangeYear(event) {
-			let yearNow = new Date();			
+			let yearNow = new Date();
 			let shortYearNow = yearNow.getFullYear().toString();
-			
+
 			// get 2 last numbers of year
 			shortYearNow = shortYearNow[2] + shortYearNow[3];
 
 			// check enter value and return right value -
 			// - at input & field on card
-			if (event.target.value == '') { 
+			if (event.target.value == '') {
 				this.yearDate = 'YY'
 			} else {
 				if ((event.target.value < 10) && (event.target.value > 0)) {
@@ -84,34 +83,50 @@ const App = {
 						this.yearDate = shortYearNow;
 						event.target.value = shortYearNow;
 					} else {
-						if (event.target.value > parseInt(shortYearNow)+10) {
-							this.yearDate = parseInt(shortYearNow)+10;
-							event.target.value = parseInt(shortYearNow)+10;
-							alert(`This field can't be greater then ${parseInt(shortYearNow)+10}`);
+						if (event.target.value > parseInt(shortYearNow) + 10) {
+							this.yearDate = parseInt(shortYearNow) + 10;
+							event.target.value = parseInt(shortYearNow) + 10;
+							alert(`This field can't be greater then ${parseInt(shortYearNow) + 10}`);
 						} else {
-							this.yearDate = event.target.value					
+							this.yearDate = event.target.value
 						}
 					}
 				}
-			}	
-		}
+			}
+		},
+
+		// Change display CVV-code
+		// Only numbers
+		inputChangeCVV(event) {
+			cvv = event.target.value.split('');
+			let changeCVV = [];
+			for (let i = 0; cvv.length <= 3; i++) {
+				changeCVV = cvv.splice([i], 1, cvv[i]);
+				if (cvv[i] == undefined) {
+					cvv[i] = '#'
+				}
+				this.cvv = cvv;
+			}
+		},
+
 	}
 }
 
-Vue.createApp(App).mount('#appPayment')
+Vue.createApp(Card).mount('#appPayment')
+
 
 // Check! 
 // Only numbers on input Number
 function validateNumber(evt) {
 	var theEvent = evt || window.event;
 	var key = theEvent.keyCode || theEvent.which;
-	key = String.fromCharCode( key );
+	key = String.fromCharCode(key);
 	var regex = /[0-9]/;
-	if( !regex.test(key) ) {
-	  theEvent.returnValue = false;
-	  if(theEvent.preventDefault) theEvent.preventDefault();
+	if (!regex.test(key)) {
+		theEvent.returnValue = false;
+		if (theEvent.preventDefault) theEvent.preventDefault();
 	}
- }
+}
 
 
 // Check!
@@ -119,47 +134,31 @@ function validateNumber(evt) {
 function validateName(evt) {
 	var theEvent = evt || window.event;
 	var key = theEvent.keyCode || theEvent.which;
-	key = String.fromCharCode( key );
+	key = String.fromCharCode(key);
 	var regex = /[A-Za-z\s]/;
-	if( !regex.test(key) ) {
-	  theEvent.returnValue = false;
-	  if(theEvent.preventDefault) theEvent.preventDefault();
+	if (!regex.test(key)) {
+		theEvent.returnValue = false;
+		if (theEvent.preventDefault) theEvent.preventDefault();
 	}
 }
 
-// Switch class .active on focus CVV
-
-// var cards = document.querySelectorAll('.card');
-
-// [...cards].forEach((card)=>{	
-// 	card.addEventListener( 'click', function() {	  
-// 		card.classList.toggle('is-flipped');	
-// 	});
-// });
-
-// var wrapper = document.querySelectorAll('cvv');
-// wrapper.addEventListener( 'focus', function() {
-// 	[...cards].forEach((card)=> {
-// 		card.classList.toggle('is-flipped');
-// 		console.log('wut');
-// 	});
-// });
-
+// Event wrapp the card if CVV-input is focused
 function wrapperHandler() {
 	var cards = document.querySelectorAll('.card');
 	var wrapper = document.querySelectorAll('cvv');
 	if (wrapper != 0) {
-		[...cards].forEach((card)=> {
+		[...cards].forEach((card) => {
 			card.classList.add('is-flipped');
 		});
 	}
 }
 
+// Event wrapp the card if CVV-input is not focused
 function reverseWrapperHandler() {
 	var cards = document.querySelectorAll('.card');
 	var wrapper = document.querySelectorAll('cvv');
 	if (wrapper != 1) {
-		[...cards].forEach((card)=> {
+		[...cards].forEach((card) => {
 			card.classList.remove('is-flipped');
 		});
 	}
